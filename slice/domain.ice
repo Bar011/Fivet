@@ -67,12 +67,12 @@ module model {
             string email;
 
 
-}
+    }
 
-/**
-*
-*/
-class Ficha {
+     /**
+     *Clase Ficha
+     */
+    class Ficha {
 
         /**
         *PK
@@ -97,7 +97,7 @@ class Ficha {
 
 
 
-}
+     }
 
     /**
      * The base system.

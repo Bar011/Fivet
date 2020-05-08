@@ -28,7 +28,7 @@ module model {
 
 
     /**
-    * Clase persona
+    * Clase persona (Dueño)
     */
     class Persona{
             /**
@@ -95,7 +95,66 @@ module model {
          */
           string fechaNacimiento;
 
+        /**
+        * Raza
+        */
+        string raza;
 
+        /**
+        *Sexo
+        */
+        string sexo;
+
+        /**
+        *color
+        */
+        string color;
+
+         /**
+         *tipo
+         */
+        string tipo;
+     }
+
+     /**
+     *Clase Control
+     */
+     class Control{
+
+      /**
+      * Fecha:
+      */
+      string fecha;
+
+      /**
+      * Fecha del proximo control
+      */
+      string fechaProxControl;
+
+      /**
+      *Temperatura
+      */
+      //double temperatura;
+
+      /**
+      *Peso
+      */
+      //double peso;
+
+      /**
+      *Altura
+      */
+      double altura;
+
+      /**
+      *Diagnostico
+      */
+      string diagnostico;
+
+      /**
+      *Veterinario
+      */
+      string veterinario;
 
      }
 

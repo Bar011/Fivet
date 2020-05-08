@@ -26,6 +26,79 @@
 ["java:package:cl.ucn.disc.pdis.fivet.zeroice"]
 module model {
 
+
+    /**
+    * Clase persona
+    */
+    class Persona{
+            /**
+            * PK
+            */
+            int id;
+
+            /**
+            *Rut: 18124996K
+            */
+            string rut;
+
+            /**
+            * nombre;
+            */
+            string nombre;
+
+            /**
+            * Direccion
+            */
+            string direccion;
+
+            /**
+            * Telefono fijo: +56 55 23550000
+            */
+            long telefonoFijo;
+
+            /**
+            * Telefono movil
+            */
+            long telefonoMovil;
+
+            /**
+            *Correo Electronico
+            */
+            string email;
+
+
+}
+
+/**
+*
+*/
+class Ficha {
+
+        /**
+        *PK
+        */
+        int id;
+
+        /**
+        * Numero 2345;
+        **/
+        int numero;
+
+        /**
+         * Nombre: Copito.
+         */
+         string nombre;
+
+         /**
+         * Fecha de Nacimiento.
+         Format: ISO_ZONED_DATE_TIME
+         */
+          string fechaNacimiento;
+
+
+
+}
+
     /**
      * The base system.
      */
@@ -39,3 +112,4 @@ module model {
      }
 
 }
+

@@ -22,19 +22,49 @@
  * SOFTWARE.
  */
 
-plugins {
-    id 'java'
-}
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
-dependencies {
+/**
+ * The persona class
+ *
+ * @author Beatriz Alvarez-Rojas.
+ */
 
-    //ORM Lite
+@DatabaseTable(tableName = "testPersona");
+public final class TestPersona {
 
-    implementation 'com.j256.ormlite:ormlite-core:5.1'
-    implementation 'com.j256.ormlite:ormlite-jdbc:5.1'
+    /**
+     * The id: Primary Key and autoincrement.
+     */
+    @DatabaseField(generatedId = true)
+    private Long id;
 
-    // Database H2
+    /**
+     * The Nombre.
+     */
+    @DatabaseField(canBeNull = false)
+    private String nombre;
 
-    implementation 'com.h2database:h2:1.4.200'
+    /**
+     * The Apellido
+     */
+    @DatabaseField(canBeNull = false)
+    private String apellido;
 
+    /**
+     * The Rut.
+     */
+    @DatabaseField(canBeNull = false, index = true)
+    private String rut;
+
+    /**
+     * Empty constructor; Default visibility + empty body.
+     */
+    TestPersona(){
+        //nothing Here.
+    }
+    TestPersona(String nombre, String apellido, String rut) {
+
+    }
 }

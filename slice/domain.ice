@@ -28,7 +28,7 @@ module model {
 
 
     /**
-    * Clase persona (Dueño)
+    * Clase persona (Duenio)
     */
     class Persona{
             /**
@@ -66,8 +66,7 @@ module model {
             */
             string email;
 
-
-    }
+}
 
      /**
      *Clase Ficha
@@ -103,7 +102,7 @@ module model {
         /**
         *Sexo
         */
-        string sexo;
+        //enum sexo {MACHO,HEMBRA}
 
         /**
         *color
@@ -113,13 +112,25 @@ module model {
          /**
          *tipo
          */
-        string tipo;
+        //string tipoPaciente {INTERNO,EXTERNO }
+
+        //Sexo sexo;
+
+        //TipoPaciente tipoPaciente;
+
+        //Foto puede ser un atributo de ficha. Puede ser una secuencia
+        //de string.
      }
 
      /**
      *Clase Control
      */
      class Control{
+
+     /**
+             *PK
+             */
+             int id;
 
       /**
       * Fecha:
@@ -128,6 +139,7 @@ module model {
 
       /**
       * Fecha del proximo control
+      *Format: ISO_ZONED_DATE_TIME
       */
       string fechaProxControl;
 
@@ -156,6 +168,32 @@ module model {
       */
       string veterinario;
 
+     }
+
+     interface Contratos{
+     /**
+     *Dado un numero de ficha,retorna la ficha asociada
+     *@param numero de ficha a obtener
+     *@return The Ficha
+     */
+     Ficha obtenerFicha(int numero);
+     //Ficha IngresarDatos(int numero);
+
+     /**
+     *
+     */
+
+     Persona ObtenerDuenio(Persona Duenio);
+
+     /**
+      *
+      */
+
+     //Control IngresarControl(Control control);
+     //AgregarFoto
+     //Agregar Examen de paciente
+
+     //Tarea Escribir todas las operacione de sistema con la doc estilo java doc
      }
 
     /**

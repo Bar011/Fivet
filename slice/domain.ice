@@ -26,11 +26,13 @@
 ["java:package:cl.ucn.disc.pdis.fivet.zeroice"]
 module model {
 
-
     /**
     * Clase persona (Duenio)
     */
+
         class Persona{
+
+
             /**
             * PK
             */
@@ -42,7 +44,7 @@ module model {
             string rut;
 
             /**
-            * nombre;
+            * Nombre;
             */
             string nombre;
 
@@ -66,144 +68,146 @@ module model {
             */
             string email;
 
-}
+        }
+
+            /**
+            *The Sexo
+            */
+
+            enum Sexo {
+                 MACHO,
+                 HEMBRA
+            }
+
+            /**
+            * TipoPaciente
+            */
+
+            enum TipoPaciente {
+                  INTERNO,
+                  EXTERNO
+            }
 
      /**
      *Clase Ficha
      */
         class Ficha {
 
-            /**
-            *PK
-            */
-            int id;
+                /**
+                *PrimaryKey
+                */
+                int id;
 
-            /**
-            * Numero 2345;
-            **/
-            int numero;
+                /**
+                * Numero 2345;
+                **/
+                int numero;
 
-            /**
-             * Nombre: Copito.
-             */
-             string nombre;
-
-             /**
-             * Fecha de Nacimiento.
-             Format: ISO_ZONED_DATE_TIME
-             */
-              string fechaNacimiento;
-
-            /**
-            * Raza
-            */
-            string raza;
-
-
-            /**
-            *color
-            */
-            string color;
-
-
-            Sexo sexo;
-
-            TipoPaciente tipoPaciente;
-
-            //Foto puede ser un atributo de ficha. Puede ser una secuencia
-            //de string.
-     }
+                /**
+                 * Nombre: Copito.
+                 */
+                 string nombre;
 
                  /**
-                 *Sexo
+                 * Fecha de Nacimiento.
+                 *Format: ISO_ZONED_DATE_TIME
                  */
-                 enum sexo {MACHO,HEMBRA}
-
-                 /**
-                 *color
-                 */
-                 string color;
+                  string fechaNacimiento;
 
                   /**
-                  *tipo
+                  * Raza
                   */
-                 string tipoPaciente {INTERNO,EXTERNO }
+                  string raza;
 
 
+                   /**
+                   *color
+                   */
+                   string color;
 
-     /**
-     *Clase Control
-     */
-             class Control{
+                   /**
+                   * Sexo : Macho /Hembra
+                   */
+                    Sexo sexo;
+
+                    /**
+                    * Tipo Paciente: interno / externo
+                     TipoPaciente tipoPaciente;
+
+                //Nota de clase: Foto puede ser un atributo de ficha. Puede ser una secuencia
+                //de string.
+
+                }
+
+
+            /**
+            *Clase Control
+            */
+
+                class Control{
+
+                 /**
+                 *PK
+                 */
+                 int id;
+
+                  /**
+                  * Fecha:
+                  */
+                  string fecha;
+
+                  /**
+                  * Fecha del proximo control
+                  *Format: ISO_ZONED_DATE_TIME
+                  */
+                  string fechaProxControl;
+
+                  /**
+                  *Temperatura
+                  */
+                  double temperatura;
+
+                  /**
+                  *Peso
+                  */
+                  double peso;
+
+                  /**
+                  *Altura
+                  */
+                  double altura;
+
+                  /**
+                  *Diagnostico
+                  */
+                  string diagnostico;
+
+
+                 }
+                 /**
+                 * The Contratos.
+                 */
+
+             interface Contratos{
 
              /**
-             *PK
+             *Dado un numero de ficha,retorna la ficha asociada
+             *
+             *@param numero de ficha a obtener
+             *@return The Ficha
              */
-             int id;
+             Ficha obtenerFicha(int numero);
 
-              /**
-              * Fecha:
-              */
-              string fecha;
 
-              /**
-              * Fecha del proximo control
-              *Format: ISO_ZONED_DATE_TIME
-              */
-              string fechaProxControl;
+             /**
+             * Dado un numero de rut retorna la persona
+             *
+             * @param numero de ficha a obtener
+             * @return The Persona
+             */
+             Persona ObtenerPersona(String rut);
 
-              /**
-              *Temperatura
-              */
-              double temperatura;
-
-              /**
-              *Peso
-              */
-              double peso;
-
-              /**
-              *Altura
-              */
-              double altura;
-
-              /**
-              *Diagnostico
-              */
-              string diagnostico;
-
-              /**
-              *Veterinario
-              */
-              string veterinario;
-
-     }
-
-      interface Contratos{
-         /**
-         *Dado un numero de ficha,retorna la ficha asociada
-         *@param numero de ficha a obtener
-         *@return The Ficha
-         */
-         Ficha obtenerFicha(int numero);
-         //Ficha IngresarDatos(int numero);
-
-         /**
-         *
-         */
-
-         Persona ObtenerDuenio(Persona Duenio);
-
-         /**
-          *
-          */
-
-         //Control IngresarControl(Control control);
-         //AgregarFoto
-         //Agregar Examen de paciente
-
-         //Tarea Escribir todas las operacione de sistema con la doc estilo java doc
-         }
+          }
 
     /**
      * The base system.

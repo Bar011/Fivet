@@ -30,7 +30,7 @@ module model {
     /**
     * Clase persona (Duenio)
     */
-    class Persona{
+        class Persona{
             /**
             * PK
             */
@@ -71,130 +71,139 @@ module model {
      /**
      *Clase Ficha
      */
-    class Ficha {
+        class Ficha {
 
-        /**
-        *PK
-        */
-        int id;
+            /**
+            *PK
+            */
+            int id;
 
-        /**
-        * Numero 2345;
-        **/
-        int numero;
+            /**
+            * Numero 2345;
+            **/
+            int numero;
 
-        /**
-         * Nombre: Copito.
-         */
-         string nombre;
+            /**
+             * Nombre: Copito.
+             */
+             string nombre;
 
-         /**
-         * Fecha de Nacimiento.
-         Format: ISO_ZONED_DATE_TIME
-         */
-          string fechaNacimiento;
+             /**
+             * Fecha de Nacimiento.
+             Format: ISO_ZONED_DATE_TIME
+             */
+              string fechaNacimiento;
 
-        /**
-        * Raza
-        */
-        string raza;
+            /**
+            * Raza
+            */
+            string raza;
 
-        /**
-        *Sexo
-        */
-        //enum sexo {MACHO,HEMBRA}
 
-        /**
-        *color
-        */
-        string color;
+            /**
+            *color
+            */
+            string color;
 
-         /**
-         *tipo
-         */
-        //string tipoPaciente {INTERNO,EXTERNO }
 
-        //Sexo sexo;
+            Sexo sexo;
 
-        //TipoPaciente tipoPaciente;
+            TipoPaciente tipoPaciente;
 
-        //Foto puede ser un atributo de ficha. Puede ser una secuencia
-        //de string.
+            //Foto puede ser un atributo de ficha. Puede ser una secuencia
+            //de string.
      }
+
+                 /**
+                 *Sexo
+                 */
+                 enum sexo {MACHO,HEMBRA}
+
+                 /**
+                 *color
+                 */
+                 string color;
+
+                  /**
+                  *tipo
+                  */
+                 string tipoPaciente {INTERNO,EXTERNO }
+
+
 
      /**
      *Clase Control
      */
-     class Control{
+             class Control{
 
-     /**
+             /**
              *PK
              */
              int id;
 
-      /**
-      * Fecha:
-      */
-      string fecha;
+              /**
+              * Fecha:
+              */
+              string fecha;
 
-      /**
-      * Fecha del proximo control
-      *Format: ISO_ZONED_DATE_TIME
-      */
-      string fechaProxControl;
+              /**
+              * Fecha del proximo control
+              *Format: ISO_ZONED_DATE_TIME
+              */
+              string fechaProxControl;
 
-      /**
-      *Temperatura
-      */
-      //double temperatura;
+              /**
+              *Temperatura
+              */
+              double temperatura;
 
-      /**
-      *Peso
-      */
-      //double peso;
+              /**
+              *Peso
+              */
+              double peso;
 
-      /**
-      *Altura
-      */
-      double altura;
+              /**
+              *Altura
+              */
+              double altura;
 
-      /**
-      *Diagnostico
-      */
-      string diagnostico;
+              /**
+              *Diagnostico
+              */
+              string diagnostico;
 
-      /**
-      *Veterinario
-      */
-      string veterinario;
+              /**
+              *Veterinario
+              */
+              string veterinario;
 
      }
 
-     interface Contratos{
-     /**
-     *Dado un numero de ficha,retorna la ficha asociada
-     *@param numero de ficha a obtener
-     *@return The Ficha
-     */
-     Ficha obtenerFicha(int numero);
-     //Ficha IngresarDatos(int numero);
+      interface Contratos{
+         /**
+         *Dado un numero de ficha,retorna la ficha asociada
+         *@param numero de ficha a obtener
+         *@return The Ficha
+         */
+         Ficha obtenerFicha(int numero);
+         //Ficha IngresarDatos(int numero);
 
-     /**
-     *
-     */
+         /**
+         *
+         */
 
-     Persona ObtenerDuenio(Persona Duenio);
+         Persona ObtenerDuenio(Persona Duenio);
 
-     /**
-      *
-      */
+         /**
+          *
+          */
 
-     //Control IngresarControl(Control control);
-     //AgregarFoto
-     //Agregar Examen de paciente
+         //Control IngresarControl(Control control);
+         //AgregarFoto
+         //Agregar Examen de paciente
 
-     //Tarea Escribir todas las operacione de sistema con la doc estilo java doc
-     }
+         //Tarea Escribir todas las operacione de sistema con la doc estilo java doc
+         }
 
     /**
      * The base system.

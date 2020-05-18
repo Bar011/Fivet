@@ -206,6 +206,7 @@ module model {
              * @param numero de ficha a obtener
              * @return The Persona
              */
+
              Persona ObtenerPersona(string rut);
 
           }

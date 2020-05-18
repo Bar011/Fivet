@@ -132,6 +132,7 @@ module model {
 
                     /**
                     * Tipo Paciente: interno / externo
+                    */
                      TipoPaciente tipoPaciente;
 
                 //Nota de clase: Foto puede ser un atributo de ficha. Puede ser una secuencia
@@ -205,7 +206,7 @@ module model {
              * @param numero de ficha a obtener
              * @return The Persona
              */
-             Persona ObtenerPersona(String rut);
+             Persona ObtenerPersona(string rut);
 
           }
 

@@ -184,32 +184,56 @@ module model {
                   string diagnostico;
 
 
-                 }
-                 /**
-                 * The Contratos.
+              }
+
+              /**
+              * The Contratos.
+              */
+
+              interface Contratos{
+
+                /**
+                 * Deseo registrar los datos de un paciente.
+                 *
+                 * @param ficha a crear en el backend.
+                 * @return the ficha almacenada en el backend (con numero asignado).
                  */
+                 Ficha crearFicha(Ficha ficha);
 
-             interface Contratos{
+                 /**
+                 * Deseo registrar los datos del duenio de un paciente.
+                 *
+                 * @param persona a crear en el backend.
+                 * @return the Persona almacenada en el backend.
+                 */
+                 Persona crearPersona(Persona persona);
 
-             /**
-             *Dado un numero de ficha,retorna la ficha asociada
-             *
-             *@param numero de ficha a obtener
-             *@return The Ficha
-             */
-             Ficha obtenerFicha(int numero);
+                 /**
+                 * Deseo registrar los datos de un Control.
+                 *
+                 * @param numeroFicha al cual sera asignado el control.
+                 * @param control a agregar.
+                 */
+                 Control crearControl(int numeroFicha, Control control);
+
+                 /**
+                 *Dado un numero de ficha,retorna la ficha asociada
+                 *
+                 *@param numero de ficha a obtener
+                 *@return The Ficha
+                 */
+                 Ficha obtenerFicha(int numero);
 
 
-             /**
-             * Dado un numero de rut retorna la persona
-             *
-             * @param numero de ficha a obtener
-             * @return The Persona
-             */
+                 /**
+                 * Dado un numero de rut retorna la persona
+                 *
+                 * @param numero de ficha a obtener
+                 * @return The Persona
+                 */
+                 Persona ObtenerPersona(string rut);
 
-             Persona ObtenerPersona(string rut);
-
-          }
+              }
 
     /**
      * The base system.

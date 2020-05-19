@@ -22,7 +22,9 @@
  * SOFTWARE.                                                                                      *
  **************************************************************************************************/
 
-package cl.ucn.disc.pdis.fivet.dao;import com.j256.ormlite.dao.Dao;
+package cl.ucn.disc.pdis.fivet.dao;
+import cl.ucn.disc.pdis.fivet.models.PruebaPersona;
+import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.dao.DaoManager;
 import com.j256.ormlite.jdbc.JdbcConnectionSource;
 import com.j256.ormlite.support.ConnectionSource;
@@ -64,32 +66,32 @@ public final class StorageTest {
         try(ConnectionSource connectionSource = new JdbcConnectionSource(databaseUrl)) {
 
             //Create The table from the Persona Annotations
-            TableUtils.createTableIfNotExists(connectionSource, TestPersona.class);
+            TableUtils.createTableIfNotExists(connectionSource, PruebaPersona.class);
 
             //The dao of testPersona
 
-            Dao<TestPersona, Long> daoPersona = DaoManager.createDao(connectionSource, TestPersona.class);
+            Dao<PruebaPersona, Long> daoPersona = DaoManager.createDao(connectionSource, PruebaPersona.class);
 
             //New Persona
 
-            TestPersona persona = new TestPersona("Carlos", "Pon", "123456789-0");
+            PruebaPersona PersonaTest = new PruebaPersona("Carlos", "Pon", "123456789-0");
 
             //Insert Persona into the database
-            int tuples = daoPersona.create(persona);
-            log.debug("id:{}", persona.getId());
+            int tuples = daoPersona.create(PersonaTest);
+            log.debug("id:{}", PersonaTest.getId());
             //
             Assertions.assertEquals(1, tuples, "save Tuples !=1");
 
             //GetGrom db
 
-            TestPersona personaDb = daoPersona.queryForId(persona.getId());
+            PruebaPersona personaDb = daoPersona.queryForId(PersonaTest.getId());
 
-            Assertions.assertEquals(persona.getNombre(),personaDb.getNombre() , "nombre not equals!");
-            Assertions.assertEquals(persona.getApellido(), personaDb.getApellido(), "Apellido not equals!");
-            Assertions.assertEquals(persona.getRut(), personaDb.getRut(), "Rut not equals!");
+            Assertions.assertEquals(PersonaTest.getNombre(),personaDb.getNombre() , "nombre not equals!");
+            Assertions.assertEquals(PersonaTest.getApellido(), personaDb.getApellido(), "Apellido not equals!");
+            Assertions.assertEquals(PersonaTest.getRut(), personaDb.getRut(), "Rut not equals!");
 
             // Search by Rut : SELECT * FROM 'persona' WHERE rut = '123456789-0'
-            List<TestPersona> personaList = daoPersona.queryForEq("rut", "123456789-0");
+            List<PruebaPersona> personaList = daoPersona.queryForEq("rut", "123456789-0");
             Assertions.assertEquals(1, personaList.size(), "more than one person?!");
 
             //not found by rut
